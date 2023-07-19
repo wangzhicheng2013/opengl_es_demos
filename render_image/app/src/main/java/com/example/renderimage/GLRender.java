@@ -16,13 +16,15 @@ public class GLRender implements GLSurfaceView.Renderer {
     private int mSurfaceWidth, mSurfaceHeight;
     private int mShowWidth, mShowHeight;
     private NV21Display mNV21Display;
+    private Context mContext;
     public GLRender(Context context) {
+        mNV21Display = new NV21Display();
+        mContext = context;
     }
     @Override
     public void onSurfaceCreated(GL10 gl, EGLConfig config) {
         GLES20.glClearColor(0.0f, 0, 0, 0.0f);
-        mNV21Display = new NV21Display();       // must set here
-        if (false == mNV21Display.init()) {
+        if (false == mNV21Display.init(mContext)) {         // must set here
             Log.e(TAG, "NV21Display init failed!");
             throw new RuntimeException("NV21Display init failed!");
         }

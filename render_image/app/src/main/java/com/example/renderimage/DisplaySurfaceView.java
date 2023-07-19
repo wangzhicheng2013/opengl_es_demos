@@ -14,20 +14,20 @@ import javax.microedition.khronos.opengles.GL10;
 public class DisplaySurfaceView extends GLSurfaceView {
     private final static String TAG = "DisplaySurfaceView";
     private final static int OPENGL_ES_VERSION = 2;
-    public GLRender mGlRender;
+    public GLRender mGLRender;
     public DisplaySurfaceView(Context context) {
         super(context);
-        setEGLContextClientVersion(OPENGL_ES_VERSION);  // 设置opengl版本
-        mGlRender = new GLRender(context);
-        setRenderer(mGlRender);                                    // 设置渲染器
+        setEGLContextClientVersion(OPENGL_ES_VERSION);             // 设置opengl版本
+        mGLRender = new GLRender(context);
+        setRenderer(mGLRender);                                    // 设置渲染器
         setRenderMode(RENDERMODE_WHEN_DIRTY);                      // 设置渲染模式 只有在创建和调用requestRender()时才会刷新
         Log.d(TAG,"DisplaySurfaceView(Context context) init");
     }
     public DisplaySurfaceView(Context context, AttributeSet attrs) {
         super(context,attrs);
         setEGLContextClientVersion(OPENGL_ES_VERSION);             // 必须开始就设置
-        mGlRender = new GLRender(context);
-        setRenderer(mGlRender);                                    // 设置渲染器
+        mGLRender = new GLRender(context);
+        setRenderer(mGLRender);                                    // 设置渲染器
         setRenderMode(RENDERMODE_WHEN_DIRTY);
         Log.d(TAG,"DisplaySurfaceView(Context context, AttributeSet attrs) init");
     }

@@ -67,9 +67,9 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
         Log.d(TAG, "read size:" + byteCount);
-        mDisplaySurfaceView.mGlRender.mWidth = IMAGE_WIDTH;
-        mDisplaySurfaceView.mGlRender.mHeight = IMAGE_HEIGHT;
-        mDisplaySurfaceView.mGlRender.nv21 = imageData;
+        mDisplaySurfaceView.mGLRender.mWidth = IMAGE_WIDTH;
+        mDisplaySurfaceView.mGLRender.mHeight = IMAGE_HEIGHT;
+        mDisplaySurfaceView.mGLRender.nv21 = imageData;
         mDisplaySurfaceView.requestRender();
     }
     @Override
